@@ -1,0 +1,718 @@
+2014-04-25 08:35:06,555 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 08:35:06,556 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 08:35:06,556 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 08:35:06,558 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 08:35:07,588 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 08:35:07,589 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:35:07,589 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 08:35:07,589 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 08:35:07,590 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 08:35:07,590 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 08:35:07,590 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 08:35:07,591 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 08:35:07,591 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 08:35:07,591 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 08:35:07,591 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 08:35:07,591 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 08:35:07,592 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 08:35:07,592 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 08:35:07,592 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 08:35:07,592 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 08:35:07,592 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 08:35:07,593 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:35:07,593 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 08:35:07,595 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 08:35:07,597 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 08:35:07,928 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 08:35:08,792 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 08:35:09,649 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 08:35:10,501 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 08:35:11,358 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 08:35:12,220 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 08:35:13,086 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 08:35:13,947 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 08:35:14,814 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 08:35:15,669 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 08:35:16,072 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 08:35:16,072 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 08:35:16,072 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 08:35:16,073 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 08:35:16,074 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 08:35:16,074 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 08:35:16,074 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 08:35:16,074 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 08:35:16,074 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 08:35:16,126 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 08:35:16,179 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 08:35:16,231 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 08:35:16,283 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 08:35:16,288 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 08:50:35,765 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 08:50:35,765 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 08:50:35,766 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 08:50:35,768 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 08:50:36,789 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 08:50:36,790 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:50:36,790 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 08:50:36,790 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 08:50:36,791 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 08:50:36,791 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 08:50:36,791 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 08:50:36,791 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 08:50:36,791 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 08:50:36,792 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 08:50:36,792 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 08:50:36,792 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 08:50:36,792 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 08:50:36,792 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 08:50:36,793 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 08:50:36,793 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 08:50:36,793 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 08:50:36,793 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:50:36,793 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 08:50:36,795 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 08:50:36,797 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 08:50:37,123 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 08:50:37,969 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 08:50:38,821 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 08:50:39,672 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 08:50:40,519 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 08:50:41,363 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 08:50:42,209 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 08:50:43,057 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 08:50:43,901 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 08:50:44,747 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 08:50:45,149 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 08:50:45,149 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 08:50:45,150 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 08:50:45,151 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 08:50:45,151 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 08:50:45,151 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 08:50:45,151 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 08:50:45,151 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 08:50:45,151 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 08:50:45,203 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 08:50:45,255 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 08:50:45,307 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 08:50:45,359 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 08:50:45,364 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 08:52:16,383 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 08:52:16,384 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 08:52:16,384 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 08:52:16,386 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 08:52:17,406 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 08:52:17,406 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:52:17,407 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 08:52:17,407 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 08:52:17,407 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 08:52:17,408 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 08:52:17,408 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 08:52:17,408 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 08:52:17,408 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 08:52:17,409 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 08:52:17,409 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 08:52:17,409 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 08:52:17,410 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 08:52:17,410 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 08:52:17,410 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 08:52:17,410 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 08:52:17,411 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 08:52:17,411 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:52:17,411 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 08:52:17,413 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 08:52:17,415 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 08:52:17,716 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 08:52:18,516 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 08:52:19,315 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 08:52:20,126 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 08:52:20,926 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 08:52:21,726 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 08:52:22,522 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 08:52:23,314 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 08:52:24,113 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 08:52:24,911 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 08:52:25,288 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 08:52:25,289 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 08:52:25,340 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 08:52:25,391 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 08:52:25,441 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 08:52:25,492 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 08:52:25,496 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 08:55:15,370 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 08:55:15,370 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 08:55:15,371 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 08:55:15,373 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 08:55:16,395 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 08:55:16,395 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:55:16,396 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 08:55:16,396 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 08:55:16,396 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 08:55:16,396 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 08:55:16,397 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 08:55:16,397 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 08:55:16,397 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 08:55:16,398 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 08:55:16,398 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 08:55:16,398 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 08:55:16,398 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 08:55:16,399 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 08:55:16,399 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 08:55:16,399 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 08:55:16,400 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 08:55:16,400 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 08:55:16,400 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 08:55:16,402 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 08:55:16,404 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 08:55:16,728 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 08:55:17,567 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 08:55:18,396 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 08:55:19,232 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 08:55:20,064 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 08:55:20,885 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 08:55:21,708 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 08:55:22,531 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 08:55:23,350 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 08:55:24,174 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 08:55:24,565 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 08:55:24,566 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 08:55:24,567 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 08:55:24,617 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 08:55:24,669 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 08:55:24,719 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 08:55:24,770 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 08:55:24,774 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 09:00:53,205 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 09:00:53,205 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 09:00:53,205 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 09:00:53,208 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:00:54,229 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 09:00:54,230 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 09:00:54,230 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 09:00:54,230 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 09:00:54,231 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 09:00:54,231 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 09:00:54,231 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 09:00:54,231 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 09:00:54,231 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 09:00:54,232 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 09:00:54,232 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 09:00:54,232 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 09:00:54,232 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 09:00:54,232 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 09:00:54,233 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 09:00:54,233 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 09:00:54,233 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 09:00:54,233 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 09:00:54,233 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 09:00:54,235 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 09:00:54,237 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 09:00:54,559 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 09:00:55,394 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 09:00:56,235 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 09:00:57,068 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 09:00:57,906 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 09:00:58,741 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 09:00:59,583 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 09:01:00,418 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 09:01:01,258 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 09:01:02,090 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 09:01:02,481 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:01:02,481 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 09:01:02,481 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 09:01:02,481 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 09:01:02,481 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 09:01:02,482 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 09:01:02,483 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 09:01:02,483 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:01:02,534 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 09:01:02,585 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 09:01:02,637 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 09:01:02,688 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 09:01:02,692 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 09:10:10,346 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 09:10:10,346 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 09:10:10,346 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 09:10:10,348 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:10:11,369 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 09:10:11,369 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 09:10:11,370 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 09:10:11,370 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 09:10:11,370 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 09:10:11,370 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 09:10:11,371 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 09:10:11,371 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 09:10:11,371 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 09:10:11,371 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 09:10:11,372 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 09:10:11,372 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 09:10:11,372 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 09:10:11,372 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 09:10:11,372 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 09:10:11,372 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 09:10:11,373 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 09:10:11,373 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 09:10:11,373 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 09:10:11,375 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 09:10:11,377 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 09:10:12,385 - adc5gLogging - DEBUG - ADCCalibrate - doing ogp calibration for zdok 0
+2014-04-25 09:10:12,385 - adc5gLogging - DEBUG - ADCCalibrate - test_freq: 18.3105  repeat: 10
+2014-04-25 09:10:12,385 - adc5gLogging - DEBUG - ADCCalibrate - Clearing OGP
+2014-04-25 09:10:12,386 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:10:13,696 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 09:10:14,515 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 09:10:15,331 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 09:10:16,147 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 09:10:16,956 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 09:10:17,764 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 09:10:18,573 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 09:10:19,375 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 09:10:20,179 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 09:10:20,987 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 09:10:21,370 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:10:21,370 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 09:10:21,370 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 09:10:21,370 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 09:10:21,371 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 09:10:21,372 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 09:10:21,372 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 09:10:21,372 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:10:21,422 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 09:10:21,473 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 09:10:21,523 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 09:10:21,573 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 09:10:21,578 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 09:10:21,578 - adc5gLogging - DEBUG - ADCCalibrate - OGP:(0.32043225809828751, 1.517175579119834, -5.4003278273111848, 5.6399198917743325, -1.2362778942176573, -4.3598573041576856, 0.018731282665579486, 0.57301410206433001, 4.1970603858473625, 4.0153765935635928, -0.85391178696651227, 5.5631247456218258)
+2014-04-25 09:10:21,579 - adc5gLogging - DEBUG - ADCCalibrate - SINAD:2080.40656343
+2014-04-25 09:10:21,579 - adc5gLogging - DEBUG - ADCCalibrate - done
+2014-04-25 09:10:22,580 - adc5gLogging - DEBUG - ADCCalibrate - doing ogp calibration for zdok 1
+2014-04-25 09:10:22,580 - adc5gLogging - DEBUG - ADCCalibrate - test_freq: 18.3105  repeat: 10
+2014-04-25 09:10:22,581 - adc5gLogging - DEBUG - ADCCalibrate - Clearing OGP
+2014-04-25 09:10:22,581 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:10:23,886 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.0.fit
+2014-04-25 09:10:24,691 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.1.fit
+2014-04-25 09:10:25,503 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.2.fit
+2014-04-25 09:10:26,306 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.3.fit
+2014-04-25 09:10:27,108 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.4.fit
+2014-04-25 09:10:27,912 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.5.fit
+2014-04-25 09:10:28,717 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.6.fit
+2014-04-25 09:10:29,520 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.7.fit
+2014-04-25 09:10:30,325 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.8.fit
+2014-04-25 09:10:31,127 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.fit
+2014-04-25 09:10:31,516 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:10:31,516 - adc5gLogging - DEBUG - fit_cores - #avg    -0.3537 101.7107 -21636.9017
+2014-04-25 09:10:31,516 - adc5gLogging - DEBUG - fit_cores - core A  -2.9493 -1.0045  -3.5085
+2014-04-25 09:10:31,516 - adc5gLogging - DEBUG - fit_cores - core B  -2.0209 -0.1716  -2.4659
+2014-04-25 09:10:31,516 - adc5gLogging - DEBUG - fit_cores - core C  -1.2680  0.4803   2.4008
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - core D   4.8236  0.6957   3.5737
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 32.27
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.ogp: 10  18.3105  -0.3742 101.7227  -2.9787  -1.0081  -2.6508  -2.0572  -0.1586  -2.5410  -1.2939   0.4856   1.7727   4.8329   0.6811   3.4191 
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - #avg    -0.3742 101.7227   0.0000
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - core A  -2.9787 -1.0081  -2.6508
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - core B  -2.0572 -0.1586  -2.5410
+2014-04-25 09:10:31,517 - adc5gLogging - DEBUG - fit_cores - core C  -1.2939  0.4856   1.7727
+2014-04-25 09:10:31,518 - adc5gLogging - DEBUG - fit_cores - core D   4.8329  0.6811   3.4191
+2014-04-25 09:10:31,518 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:10:31,569 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.a
+2014-04-25 09:10:31,621 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.c
+2014-04-25 09:10:31,673 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.b
+2014-04-25 09:10:31,727 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.d
+2014-04-25 09:10:31,732 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.res
+2014-04-25 09:10:31,732 - adc5gLogging - DEBUG - ADCCalibrate - OGP:(-2.9787125228663784, -1.0081240426132996, -2.6507724510604165, -2.0571772363720848, -0.15856081847459852, -2.5409856358720306, -1.2939491303890178, 0.48559911028957992, 1.7726603333423185, 4.8328827057589958, 0.6810857507983139, 3.419097753589992)
+2014-04-25 09:10:31,733 - adc5gLogging - DEBUG - ADCCalibrate - SINAD:1664.10846078
+2014-04-25 09:10:31,733 - adc5gLogging - DEBUG - ADCCalibrate - done
+2014-04-25 09:10:32,056 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 09:10:32,883 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 09:10:33,696 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 09:10:34,507 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 09:10:35,321 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 09:10:36,128 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 09:10:36,935 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 09:10:37,739 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 09:10:38,545 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 09:10:39,368 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 09:10:39,757 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:10:39,757 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 09:10:39,758 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:10:39,759 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 09:10:39,759 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 09:10:39,759 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 09:10:39,759 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 09:10:39,759 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 09:10:39,759 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:10:39,810 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 09:10:39,862 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 09:10:39,913 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 09:10:39,965 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 09:10:39,969 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 09:11:44,136 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-25 09:11:44,136 - adc5gLogging - DEBUG - ADCCalibrate - doing inl calibration for zdok 0
+2014-04-25 09:11:44,136 - adc5gLogging - DEBUG - ADCCalibrate - Clearing INL
+2014-04-25 09:11:44,138 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:11:45,159 - adc5gLogging - DEBUG - fit_cores - 0 256
+2014-04-25 09:11:45,159 - adc5gLogging - DEBUG - fit_cores - 0 0.00000 0.00000 0.00000 0.00000
+2014-04-25 09:11:45,159 - adc5gLogging - DEBUG - fit_cores - 16 -0.02061 -0.04020 -0.05081 0.00841
+2014-04-25 09:11:45,160 - adc5gLogging - DEBUG - fit_cores - 32 -0.00384 -0.07626 -0.19888 0.03130
+2014-04-25 09:11:45,160 - adc5gLogging - DEBUG - fit_cores - 48 0.08080 -0.01995 -0.18049 -0.12889
+2014-04-25 09:11:45,160 - adc5gLogging - DEBUG - fit_cores - 64 -0.27649 -0.20474 -0.07548 -0.18706
+2014-04-25 09:11:45,161 - adc5gLogging - DEBUG - fit_cores - 80 -0.09170 -0.02386 0.28266 -0.13715
+2014-04-25 09:11:45,161 - adc5gLogging - DEBUG - fit_cores - 96 -0.04886 0.17345 0.34543 -0.06025
+2014-04-25 09:11:45,161 - adc5gLogging - DEBUG - fit_cores - 112 0.19356 0.09906 0.22898 0.22146
+2014-04-25 09:11:45,161 - adc5gLogging - DEBUG - fit_cores - 128 0.20529 0.09146 0.11289 0.29991
+2014-04-25 09:11:45,161 - adc5gLogging - DEBUG - fit_cores - 144 0.21408 0.17502 0.21355 0.21313
+2014-04-25 09:11:45,162 - adc5gLogging - DEBUG - fit_cores - 160 0.02007 0.40345 0.24936 0.22275
+2014-04-25 09:11:45,162 - adc5gLogging - DEBUG - fit_cores - 176 -0.12123 0.34551 0.12266 0.26909
+2014-04-25 09:11:45,162 - adc5gLogging - DEBUG - fit_cores - 192 -0.06379 0.06603 0.11914 0.07575
+2014-04-25 09:11:45,162 - adc5gLogging - DEBUG - fit_cores - 208 0.04966 0.00482 -0.01778 -0.15357
+2014-04-25 09:11:45,162 - adc5gLogging - DEBUG - fit_cores - 224 0.00892 -0.10575 -0.17467 -0.02780
+2014-04-25 09:11:45,163 - adc5gLogging - DEBUG - fit_cores - 240 -0.00714 -0.01297 -0.01418 0.02876
+2014-04-25 09:11:45,163 - adc5gLogging - DEBUG - fit_cores - 256 0.00000 0.00000 0.00000 0.00000
+2014-04-25 09:11:45,163 - adc5gLogging - DEBUG - fit_cores - savetxt to ...inl.meas
+2014-04-25 09:11:45,165 - adc5gLogging - DEBUG - ADCCalibrate - savtxt to ...testdata/inl_noroach_z0_2014-04-24-090838
+2014-04-25 09:11:45,167 - adc5gLogging - DEBUG - ADCCalibrate - INL done
+2014-04-25 09:11:46,174 - adc5gLogging - DEBUG - ADCCalibrate - doing ogp calibration for zdok 0
+2014-04-25 09:11:46,174 - adc5gLogging - DEBUG - ADCCalibrate - test_freq: 18.3105  repeat: 10
+2014-04-25 09:11:46,175 - adc5gLogging - DEBUG - ADCCalibrate - Clearing OGP
+2014-04-25 09:11:46,175 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:11:47,483 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 09:11:48,295 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 09:11:49,103 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 09:11:49,902 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 09:11:50,713 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 09:11:51,530 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 09:11:52,340 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 09:11:53,155 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 09:11:53,963 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 09:11:54,778 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 09:11:55,164 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:11:55,164 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 09:11:55,164 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 09:11:55,164 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 09:11:55,164 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 09:11:55,165 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 09:11:55,166 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 09:11:55,166 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:11:55,216 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 09:11:55,266 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 09:11:55,316 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 09:11:55,367 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 09:11:55,371 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-25 09:11:55,372 - adc5gLogging - DEBUG - ADCCalibrate - OGP:(0.32043225809828751, 1.517175579119834, -5.4003278273111848, 5.6399198917743325, -1.2362778942176573, -4.3598573041576856, 0.018731282665579486, 0.57301410206433001, 4.1970603858473625, 4.0153765935635928, -0.85391178696651227, 5.5631247456218258)
+2014-04-25 09:11:55,372 - adc5gLogging - DEBUG - ADCCalibrate - SINAD:2080.40656343
+2014-04-25 09:11:55,372 - adc5gLogging - DEBUG - ADCCalibrate - done
+2014-04-25 09:11:56,373 - adc5gLogging - DEBUG - ADCCalibrate - doing ogp calibration for zdok 1
+2014-04-25 09:11:56,374 - adc5gLogging - DEBUG - ADCCalibrate - test_freq: 18.3105  repeat: 10
+2014-04-25 09:11:56,374 - adc5gLogging - DEBUG - ADCCalibrate - Clearing OGP
+2014-04-25 09:11:56,374 - adc5gLogging - DEBUG - ADCCalibrate - sleeping for 1 secs
+2014-04-25 09:11:57,680 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.0.fit
+2014-04-25 09:11:58,484 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.1.fit
+2014-04-25 09:11:59,296 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.2.fit
+2014-04-25 09:12:00,111 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.3.fit
+2014-04-25 09:12:00,926 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.4.fit
+2014-04-25 09:12:01,728 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.5.fit
+2014-04-25 09:12:02,541 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.6.fit
+2014-04-25 09:12:03,346 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.7.fit
+2014-04-25 09:12:04,146 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.8.fit
+2014-04-25 09:12:04,945 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.fit
+2014-04-25 09:12:05,327 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:12:05,327 - adc5gLogging - DEBUG - fit_cores - #avg    -0.3537 101.7107 -21636.9017
+2014-04-25 09:12:05,327 - adc5gLogging - DEBUG - fit_cores - core A  -2.9493 -1.0045  -3.5085
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - core B  -2.0209 -0.1716  -2.4659
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - core C  -1.2680  0.4803   2.4008
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - core D   4.8236  0.6957   3.5737
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 32.27
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.ogp: 10  18.3105  -0.3742 101.7227  -2.9787  -1.0081  -2.6508  -2.0572  -0.1586  -2.5410  -1.2939   0.4856   1.7727   4.8329   0.6811   3.4191 
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:12:05,328 - adc5gLogging - DEBUG - fit_cores - #avg    -0.3742 101.7227   0.0000
+2014-04-25 09:12:05,329 - adc5gLogging - DEBUG - fit_cores - core A  -2.9787 -1.0081  -2.6508
+2014-04-25 09:12:05,329 - adc5gLogging - DEBUG - fit_cores - core B  -2.0572 -0.1586  -2.5410
+2014-04-25 09:12:05,329 - adc5gLogging - DEBUG - fit_cores - core C  -1.2939  0.4856   1.7727
+2014-04-25 09:12:05,329 - adc5gLogging - DEBUG - fit_cores - core D   4.8329  0.6811   3.4191
+2014-04-25 09:12:05,329 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:12:05,379 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.a
+2014-04-25 09:12:05,429 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.c
+2014-04-25 09:12:05,478 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.b
+2014-04-25 09:12:05,528 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.d
+2014-04-25 09:12:05,532 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z1_2014-04-24-090838.dat.9.res
+2014-04-25 09:12:05,533 - adc5gLogging - DEBUG - ADCCalibrate - OGP:(-2.9787125228663784, -1.0081240426132996, -2.6507724510604165, -2.0571772363720848, -0.15856081847459852, -2.5409856358720306, -1.2939491303890178, 0.48559911028957992, 1.7726603333423185, 4.8328827057589958, 0.6810857507983139, 3.419097753589992)
+2014-04-25 09:12:05,533 - adc5gLogging - DEBUG - ADCCalibrate - SINAD:1664.10846078
+2014-04-25 09:12:05,534 - adc5gLogging - DEBUG - ADCCalibrate - done
+2014-04-25 09:12:05,839 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.0.fit
+2014-04-25 09:12:06,642 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.1.fit
+2014-04-25 09:12:07,453 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.2.fit
+2014-04-25 09:12:08,262 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.3.fit
+2014-04-25 09:12:09,068 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.4.fit
+2014-04-25 09:12:09,869 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.5.fit
+2014-04-25 09:12:10,669 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.6.fit
+2014-04-25 09:12:11,477 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.7.fit
+2014-04-25 09:12:12,319 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.8.fit
+2014-04-25 09:12:13,126 - adc5gLogging - DEBUG - fit_cores - savetxt to ...testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.fit
+2014-04-25 09:12:13,509 - adc5gLogging - DEBUG - fit_cores - # 18.31  zero(mV) amp(%)  dly(ps) (adj by .4, .14, .11)
+2014-04-25 09:12:13,509 - adc5gLogging - DEBUG - fit_cores - #avg     2.4809 104.7242 -24116.4191
+2014-04-25 09:12:13,509 - adc5gLogging - DEBUG - fit_cores - core A   0.2923  1.5227  -6.4063
+2014-04-25 09:12:13,509 - adc5gLogging - DEBUG - fit_cores - core B   5.6200 -1.2380  -3.2482
+2014-04-25 09:12:13,509 - adc5gLogging - DEBUG - fit_cores - core C  -0.0091  0.5689   4.2988
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - core D   4.0202 -0.8536   5.3557
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - 
+sinad = 33.18
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - Writing to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.ogp: 10  18.3105   2.4986 104.7679   0.3204   1.5172  -5.4003   5.6399  -1.2363  -4.3599   0.0187   0.5730   4.1971   4.0154  -0.8539   5.5631 
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - average of 10 measurements
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - #avg     2.4986 104.7679   0.0000
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - core A   0.3204  1.5172  -5.4003
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - core B   5.6399 -1.2363  -4.3599
+2014-04-25 09:12:13,510 - adc5gLogging - DEBUG - fit_cores - core C   0.0187  0.5730   4.1971
+2014-04-25 09:12:13,511 - adc5gLogging - DEBUG - fit_cores - core D   4.0154 -0.8539   5.5631
+2014-04-25 09:12:13,511 - adc5gLogging - DEBUG - fit_cores - 
+2014-04-25 09:12:13,561 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.a
+2014-04-25 09:12:13,611 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.c
+2014-04-25 09:12:13,662 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.b
+2014-04-25 09:12:13,714 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.d
+2014-04-25 09:12:13,718 - adc5gLogging - DEBUG - fit_cores - written to file testdata/snapshot_raw_noroach_z0_2014-04-24-090838.dat.9.res
+2014-04-30 13:12:23,736 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-30 13:12:23,744 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:12:24,239 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:12:25,400 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:12:25,400 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:12:25,540 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:12:25,990 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:12:37,989 - adc5gLogging - INFO - ADCCalibrateTest - Started
+2014-04-30 13:12:37,991 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:12:37,992 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:12:37,994 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:12:37,997 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:12:37,997 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:16:03,403 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:16:03,922 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:16:05,055 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:16:05,055 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:16:05,193 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:16:05,638 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:16:07,145 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:16:07,146 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:16:07,149 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:16:07,151 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:16:07,152 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:16:28,513 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:16:29,068 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:16:30,167 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:16:30,167 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:16:30,301 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:16:30,756 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:16:32,361 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:16:32,363 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:16:32,367 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:16:32,371 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:16:32,372 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:18:43,739 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:18:44,294 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:18:45,401 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:18:45,402 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:18:45,534 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:18:46,001 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:18:47,588 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:18:47,720 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:18:48,204 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:18:49,678 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:18:49,679 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:18:49,682 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:18:49,684 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:18:49,685 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:19:03,124 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:19:03,750 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:19:04,897 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:19:04,897 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:19:05,031 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:19:05,504 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:19:07,118 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:19:07,253 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:19:07,707 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:19:09,264 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:19:09,266 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:19:09,269 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:19:09,273 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:19:09,274 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:21:26,193 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:21:26,694 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:21:27,803 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:21:27,803 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:21:27,937 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:21:28,408 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:21:30,009 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:21:30,144 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:21:30,644 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:21:32,073 - adc5gLogging - INFO - ADCCalibrate - Checking spectrum... zdok: 0 save:True filename: testdata/spec_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:21:32,239 - adc5gLogging - DEBUG - ADCCalibrate - Doing 8192 points FFT. 
+2014-04-30 13:21:32,239 - adc5gLogging - DEBUG - ADCCalibrate - Nyquist : 1500.0
+2014-04-30 13:21:32,239 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at 2.9297MHz for ADC0
+2014-04-30 13:21:32,240 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at -1.0000MHz for ADC1
+2014-04-30 13:21:32,671 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:21:32,672 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:21:32,675 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:21:32,677 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:21:32,678 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:22:34,688 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:22:35,189 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:22:36,218 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:22:36,219 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:22:36,356 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:22:36,820 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:22:38,435 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:22:38,575 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:22:39,030 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:22:40,758 - adc5gLogging - INFO - ADCCalibrate - Checking spectrum... zdok: 0 save:True filename: testdata/spec_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:22:40,949 - adc5gLogging - DEBUG - ADCCalibrate - Doing 8192 points FFT. 
+2014-04-30 13:22:40,949 - adc5gLogging - DEBUG - ADCCalibrate - Nyquist : 1500.0
+2014-04-30 13:22:40,949 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at 2.9297MHz for ADC0
+2014-04-30 13:22:40,949 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at -1.0000MHz for ADC1
+2014-04-30 13:22:41,221 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:22:41,222 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:22:41,225 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:22:41,227 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:22:41,228 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:23:19,818 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:23:20,386 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:21,545 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:23:21,545 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:23:21,709 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:23:22,240 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:23,992 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:23:24,129 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:23:24,567 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:26,348 - adc5gLogging - INFO - ADCCalibrate - Checking spectrum... zdok: 0 save:True filename: testdata/spec_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:23:26,482 - adc5gLogging - DEBUG - ADCCalibrate - Doing 8192 points FFT. 
+2014-04-30 13:23:26,482 - adc5gLogging - DEBUG - ADCCalibrate - Nyquist : 1500.0
+2014-04-30 13:23:26,482 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at 2.9297MHz for ADC0
+2014-04-30 13:23:26,482 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at -1.0000MHz for ADC1
+2014-04-30 13:23:26,778 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:23:26,779 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:23:26,781 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:23:26,784 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:23:26,785 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:23:42,080 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:23:42,599 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:43,782 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:23:43,782 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:23:43,918 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:23:44,408 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:46,159 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:23:46,295 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:23:46,764 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:48,573 - adc5gLogging - INFO - ADCCalibrate - Checking spectrum... zdok: 0 save:True filename: testdata/spec_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:23:48,710 - adc5gLogging - DEBUG - ADCCalibrate - Doing 8192 points FFT. 
+2014-04-30 13:23:48,710 - adc5gLogging - DEBUG - ADCCalibrate - Nyquist : 1500.0
+2014-04-30 13:23:48,710 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at 2.9297MHz for ADC0
+2014-04-30 13:23:48,710 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at -1.0000MHz for ADC1
+2014-04-30 13:23:48,992 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/spec_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:23:49,524 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:23:49,525 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:23:49,528 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:23:49,530 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:23:49,531 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:25:04,916 - adc5gLogging - INFO - ADCCalibrate - Checking ramp test... zdok: 0 save:True filename: testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:25:05,435 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_mmcm_ramp_check_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:25:06,615 - adc5gLogging - DEBUG - ADCCalibrate - Now check raw data to make sure ADCs are back in data capturing mode...
+2014-04-30 13:25:06,615 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838
+2014-04-30 13:25:06,802 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:25:07,256 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/post_ramp_check_raw_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:25:09,000 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 0 save:True filename: testdata/raw_startup_noroach_zs0_2014-04-24-090838
+2014-04-30 13:25:09,135 - adc5gLogging - WARNING - ADCCalibrate - Power too high, clipping might be occurring...please check
+2014-04-30 13:25:09,590 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :testdata/raw_startup_noroach_zs0_2014-04-24-090838.png
+2014-04-30 13:25:11,324 - adc5gLogging - INFO - ADCCalibrate - Checking spectrum... zdok: 0 save:False filename: testdata/spec_noroach_zs0_2014-04-24-090838
+
+2014-04-30 13:25:11,463 - adc5gLogging - DEBUG - ADCCalibrate - Doing 8192 points FFT. 
+2014-04-30 13:25:11,463 - adc5gLogging - DEBUG - ADCCalibrate - Nyquist : 1500.0
+2014-04-30 13:25:11,463 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at 2.9297MHz for ADC0
+2014-04-30 13:25:11,463 - adc5gLogging - DEBUG - ADCCalibrate - Found spikes at -1.0000MHz for ADC1
+2014-04-30 13:25:11,763 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z0_2014-04-24-090838
+2014-04-30 13:25:11,764 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838
+2014-04-30 13:25:11,766 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z0_2014-04-24-090838.meas
+2014-04-30 13:25:11,769 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/inl_noroach_z1_2014-04-24-090838.meas
+2014-04-30 13:25:11,770 - adc5gLogging - INFO - ADCCalibrate - Loading file for calibration: testdata/ogp_noroach_z1_2014-04-24-090838

@@ -1,0 +1,152 @@
+'adc_controller' is different from the regular ROACH software register - it's the control register for the ASSIA ADCs through the 3-wire SPI controller. It's 32 bits but it's not a regular software register. 
+
+IODELAYS:
+
+only worth it for high clock rates, ours is 1.5 GHz, but could go to 2.0 GHz.  will test TBF
+
+For what it's worth, I've found that mmcm_calibrate_phase is not
+always sufficient to calibrate the ADCs at high clock speeds. I use
+calibrate_all_delays (which I think is only in my repo and could be
+much better tested than it currently is). Rather than sweeping the
+fpga clock phase to find the best phase for all ADC bits, this routine
+uses IODELAYs to calibrate each bit individually. Your design might
+not need this, but if you haven't already,
+
+code: 
+- put in strobe test mode (instead of ramp like MMCM)
+- sync adc (like MMCM)
+- glitches is [cores, bit, delays], [4, 8, 32]
+- for each delay (1-8)
+   - for each core, set the io_delay to zer
+   - get a snapshot (per core)
+   - for each core and bit, count the glitches
+- pass in our [cores, bit, delays] array of glitch counts to find_best_delay,
+  which seems pretty complicated, but is looking for an 'eye'
+- finally, set the io_delay of each core according to the best_delay
+
+If the test ramps look good (and snap lots of times to be sure) then
+you don't need iodelays, though I'd look at the output of
+calibrate_mmcm to check that there's a nice wide range of zero
+glitches, and that it's put you in the middle of it. You only really
+need iodelay per-bit calibration if the zero-glitch eye becomes very
+small.
+
+
+
+MMCM:
+MMCM is the "mixed mode clock manager".  From what I understand, that part of the cal routine is correcting the phase of the capture clock between the four cores.  Depending on where the rising edge of the capture clock lies, glitches in the ADC samples can occur.  The ADC has the ability to provide test ramps that they use to detect glitches and adjust the MMCM appropriately to eliminate them.  So she adjusts that to eliminate the glitches before applying the ogp & inl corrections. 
+
+FYI: the delays calibrated by mmcm_calibrate_phase aren't sent back to
+the ADC -- they're just used to set the FPGA clock phase shift on the
+FPGA (i.e., they calibrate the delay of the digital samples sent to
+the adc relative to the bit-transmission clock, they don't affect the
+sampling times of the adc at all)
+
+The script outputs two values, an optimal phase (in this case None)
+and a "glitch profile" which is just a list with a count of total
+glitches per phase. A plot of the glitch profile should show regions
+with zero glitches (where the test vector is captured perfectly) and a
+peak where the clock fails at correctly capturing the data. The script
+picks the phase that's in the direct center of the biggest zero
+region; this sometimes fails if this occurs at the boundaries. This
+will also fail if the data going into the snapshot is not properly
+converted to signed two's by the gateware; in this case the glitch
+profile will have no zero region whatsoever.
+
+
+Re. mmcm_calibrate_phase: this calibrates the FPGA clock phase
+relative to the adc data inputs to avoid glitches when the FPGA
+captures the data samples. I would guess you have glitches and this is
+why your noise is going up.
+On reprogramming, all these calibration phases come up at 0, so you
+have to re-calibrate them each time (or store the calibrations and
+reload them, though I don't think there's any functionality to do that
+in the existing code).
+ I would recommend at some
+point checking that the phase calibration is working, by setting the
+ADC to test mode (which outputs a counter) and checking the output.
+It's probably worth also checking whether the mmcm_calibrate_phase
+routine has been updated in the sma-wideband repository, because I've
+noticed it has some odd "features" which I expect Rurik has since
+fixed.
+
+
+To understand fully you probably need to look at the interface VHDL,
+but basically, there is a software register which controls the mmcm on
+the FPGA. Writing to this register can cause this mmcm to increment or
+decrement a step in phase. That mysterious line is setting a value
+corresponding to which zdok mmcm you want to modify, and whether you
+want to increment or decrement the phase.
+
+The calibration script snaps a counter signal, counts the glitches,
+steps the phase forward and repeats, until it has a complete scan. It
+then picks the best phase and shifts to there.
+Looking at how that code is implemented, it seems the phase is
+incremented all the way through the range, and once the best phase is
+found, the mmcm is further incremented to this point. This would
+suggest the mmcm phase wraps when it gets to the largest phase -- or
+this code is just completely wrong :)
+
+I was concerned the phase didn't wrap (though I hadn't noticed the
+code relies on this later anyway), and so calling inc_mmcm_phase with
+inc=0 decrements the phase by one step. Decrementing it 56 times
+should bring it all the way back to zero.
+It looks like the phase does wrap, in which case decrementing 56 times
+will wrap through zero and you'll end up back where you started, which
+shouldn't have any detrimental effect, but effectively doesn't do
+anything.
+
+
+
+
+OGP &INL
+
+ I would guess that unlike the mmcm_phases the
+ogp calibration (which is stored on the ADC, rather than the FPGA)
+would be persistent over reprogramming, but I would check this by
+manually reading the ogp registers on the ADC and checking they do not
+get reset on reprogramming.
+
+INL
+
+- get a snapshot of ADC
+- fit_cores.fit_inl from snapshot to get measured INL values
+- get_inl_registers: per chan (so set the chan first)
+  - get the FIRST_EXTINL + n register value, where n is range(6)
+  - then do some obscure bit twiddling
+for set_inl_registers we have this useful comment:
+
+    The bits are packed into six 16-bit registers on the adc in a way
+    that must make sense to the hardware designer. This subroutine takes
+    its arguments in a way that is easier to explain
+
+    The argument offs should be a list or array of 17 floats containing
+    the fraction of an lsb to offset the adc's reference ladder at 0,
+    16, ... 240, 255.  The possible offsets are 0, +-0.15, +-0.3, +-0.45
+    and +-0.0.  The values given will be rounded to the nearest of these
+    values and converted to the bits in the hardware registerd.
+
+- add the measured INL values to the current values in the ADC
+- use these to set the INL new values
+
+
+CODE:
+vegas needs to run this python code every time
+we reload the fpga, and every time we change the sample clock
+frequency.   
+
+the code figures out the optimal set up and hold time
+for the data coming into the fpga, so that vegas will
+get reliable data from the adc.    
+
+there are two versions of the code:
+
+the code we are using, from rurik, assumes every data 
+bit has the same set up and hold time, and finds the optimal
+global setting.   
+
+jack modified the code so that it finds the optimal set
+up and hold time for each bit.   this is important when 
+the adc is sampling at 5 Gsps (eg: DiBAS) when timing
+is very tight, but jack says it's probably not needed
+at 3 Gsps.   see jack's email below for details.
