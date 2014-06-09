@@ -140,16 +140,6 @@ def main():
                      , config = opts.update_conf
                      , roach = r)
 
-    #
-    cal.ogp.set_zdok(0)
-    fn = "old_ogps/vegasr2-4/ogp0_vegasr2-4_z2_2014-0424-085259"
-    cal.ogp.load_from_file(fn)
-    cal.ogp.set_zdok(1)
-    fn = "old_ogps/vegasr2-4/ogp1_vegasr2-4_z2_2014-0424-085259"
-    cal.ogp.load_from_file(fn)
-    print 'done'
-    return
-
     cal.set_freq(opts.testfreq)
     cal.set_ampl(opts.ampl)
 
