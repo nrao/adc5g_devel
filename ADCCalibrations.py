@@ -14,32 +14,47 @@ from ADCCalibrate import ADCCalibrate
 from ADCConfFile import ADCConfFile
 from valon_katcp import ValonKATCP
 
+logger = logging.getLogger('adc5gLogging')
+
 class ADCCalibrations:
 
-    def __init__(self, dir = None, roaches = None, mmcm_trials = None):
+    def __init__(self
+               , test = False
+               , dir = None
+               , roaches = None
+               , mmcm_trials = None
+               , ogp_trials = None
+               , test_tone = None
+               , now = None
+               , gpib_addr = None):
 
+        self.test = test
+        self.now = now
         self.dir = dir if dir is not None else '.'
-
         self.roaches = roaches if roaches is not None else self.get_roach_names_from_config()
-
         self.banks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
         # mmcms
         self.mmcm_trials = mmcm_trials if mmcm_trials is not None else 5
         self.mmcm_tolerance = 4
-
         
         # ogps/inls
         self.ogp_bof = 'h1k_ver106_2014_Apr_11_1612.bof'
-        # TBF: how to change this?
-        self.testfreq = 18.3105 # MHz
-        self.ogp_trials = 10
+        self.testfreq = test_tone if test_tone is not None else 18.3105 # MHz
+        self.ogp_trials = ogp_trials if ogp_trials is not None else 10
+        self.gpibaddr = gpib_addr if gpib_addr is not None else '10.16.96.174' # tape room
+
 
         # helper classes
         self.cp = ConfigParser.ConfigParser()
+        self.roach = None
         self.valon = None
         self.cal = None
         self.adcConf = None
+
+    def find_all_calibrations(self):
+        self.find_all_mmcms()
+        self.find_all_ogps()
 
     def find_all_ogps(self):
         for r in self.roaches:
@@ -50,6 +65,7 @@ class ADCCalibrations:
             self.find_mmcms(r)
 
     def get_roach_names_from_config(self):
+        "Determines what roaches to connect to from the vegas.conf file"
     
         fn = "%s/%s" % (self.dir, "vegas.conf")
         r = cp.read(fn)
@@ -77,25 +93,29 @@ class ADCCalibrations:
         return fn
 
     def init_for_roach(self, roach_name):
+        "Inits the helper classes we use to interact w/ the given roach name"
 
         # connect to roach
         tmsg = 'Connecting to %s'%roach_name
         logger.info(tmsg)
-        self.roach = corr.katcp_wrapper.FpgaClient(roach_name)
-        time.sleep(1)
-        if not self.roach.is_connected():
-            raise Exception("Cannot connect to %s" % roach_name)
+        if not self.test:
+            self.roach = corr.katcp_wrapper.FpgaClient(roach_name)
+            time.sleep(1)
+            if not self.roach.is_connected():
+                raise Exception("Cannot connect to %s" % roach_name)
     
         # we'll need this to change the frequency
         valonSerial = "/dev/ttyS1" # this should never change
-        self.valon = ValonKATCP(self.roach, valonSerial) 
+        if not self.test:
+            self.valon = ValonKATCP(self.roach, valonSerial) 
     
         # this is the object that will find the MMCM value
-        self.cal = ADCCalibrate(dir = '.' #opts.dir 
+        self.cal = ADCCalibrate(dir = self.dir 
                          , roach_name = roach_name
-                         #, gpib_addr = gpibaddr
-                         , roach = self.roach)
-                         #, test = True)
+                         , gpib_addr = self.gpibaddr
+                         , roach = self.roach
+                         , now = self.now
+                         , test = self.test)
     
         # read the config file and find the mmcm  through each mode
         fn = self.get_config_filename(roach_name)
@@ -116,7 +136,18 @@ class ADCCalibrations:
 
         self.adcConf.write_to_file()
 
+        # the INLs don't change w/ either bof, or clockrate,
+        # so now that this roach is in a suitable state (it's
+        # MMCM and OGP calibrations are done), let's do one INL
+        for z in range(2):
+            self.cal.do_inl(z)
+            self.adcConf.write_inls(z, self.inl.inls)
+        self.adcConf.write_to_file()    
+
     def change_bof(self, bof):
+
+        if self.test:
+            return
 
         # switch to the given bof file
         self.roach.progdev(bof)
@@ -125,6 +156,10 @@ class ADCCalibrations:
         time.sleep(2)
     
     def change_frequency(self, freq):
+        "If necessary, use the Valon Synth to change the Roach board clockrate."
+
+        if self.test:
+            return
 
         # we also need to switch to the given frequency
         valonSynth = 0 # neither should this (0: A, 8: B)
@@ -140,10 +175,13 @@ class ADCCalibrations:
             logger.info(tmsg)
 
     def find_this_ogp(self, freq):
-
     
+
+        # we may not need to do this, but its probably safer.
+        # OGPs don't change w/ bof file, so this is arbitrary
         self.change_bof(self.ogp_bof)
 
+        # but OGPs *do* change with clock rate
         self.change_frequency(freq)
 
         # since we reprogrammed the roach, mmcm calibrate
@@ -151,11 +189,10 @@ class ADCCalibrations:
 
         # now find the ogps
         self.cal.do_ogp(0, self.testfreq, self.ogp_trials)
-        #self.adcConf.write_ogps(freq, 0, self.cal.ogp.ogps)
         ogp0 = self.cal.ogp.ogps
         self.cal.do_ogp(0, self.testfreq, self.ogp_trials)
-        #self.adcConf.write_ogps(freq, 0, self.cal.ogp.ogps)
         ogp1 = self.cal.ogp.ogps
+
         return ogp0, ogp1
 
     def find_mmcms(self, roach_name):
@@ -240,7 +277,8 @@ class ADCCalibrations:
 if __name__ == "__main__":    
     logger = logging.getLogger('adc5gLogging')
     logger.info("Started")
-    cals = ADCCalibrations(roaches = ['srbsr2-1'], mmcm_trials = 1)
+    roach = 'vegasr2-1'
+    cals = ADCCalibrations(test = True, roaches = [roach], mmcm_trials = 1)
     #cals.find_all_mmcms()
-    cals.find_all_ogps()
+    cals.find_all_calibrations()
 

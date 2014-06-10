@@ -28,7 +28,7 @@ class ADCConfFile:
         self.filename = filename
         r = self.cp.read(filename)
         if len(r)==0:
-            raise Exception("Could not read file: %s" % fn)
+            raise Exception("Could not read file: %s" % filename)
 
         # TBF: convert all srtings from file to floats?
         self.read_mmcm_section()    

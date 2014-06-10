@@ -2,6 +2,7 @@ import sys
 sys.path.insert(1, "..")
 
 from ADCCalibrateTest import ADCCalibrateTest
+from ADCCalibrationsTest import ADCCalibrationsTest
 from SPITest import SPITest
 from GPIBTest import GPIBTest
 from OGPTest import OGPTest
