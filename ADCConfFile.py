@@ -12,6 +12,7 @@ class ADCConfFile:
 
         self.cp = ConfigParser.ConfigParser()
 
+        self.general_sec = "GENERAL"
         self.mmcm_sec = "MMCM"
         self.mmcm_info = {}
         self.ogp_sec = "OGP"
@@ -136,7 +137,7 @@ class ADCConfFile:
         self.cp.set(self.inl_sec, opt, values)
 
     def write_to_file(self):
-        self.cp.set("General", "last_updated", datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"))
+        self.cp.set(self.general_sec, "last_updated", datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"))
         with open(self.filename, 'wb') as configfile:
             self.cp.write(configfile) 
 
