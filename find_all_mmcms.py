@@ -11,6 +11,7 @@ from optparse import OptionParser
 
 import AdcCalLoggingFileHandler
 from ADCCalibrate import ADCCalibrate
+from ADCConfFile import ADCConfFile
 from valon_katcp import ValonKATCP
 
 # setup log file name:
@@ -24,62 +25,58 @@ confdir = '.' if not os.environ.has_key(var) else  os.path.join(os.environ[var],
 conffile = "%s/%s" % (confdir, 'adc_cal_logging.conf')
 if not os.path.isfile(conffile):
     print "Cannot find config file for logging: %s" % conffile
-    sys.exit(0)
+    #sys.exit(0)
+else:
+    logging.config.fileConfig(conffile)
 
-logging.config.fileConfig(conffile)
 logger = logging.getLogger('adc5gLogging')
 logger.info("Started")
 
 def main():
 
-    # TBF: we should read these from the $YGOR_TELESCOPE/etc/conf/vegas.conf file
-    #roaches = ["vegasr2-2", "vegasr2-3"]
-    #roaches = ["vegasr2-%d" % i for i in [4,5,6,7,8]]
-    roaches = ["srbsr2-1"]
+    if len(sys.argv) == 1:
+       # no roach names supplied in arguments, use vegas.conf
+       roaches = get_roach_names_from_config(confdir)
+    else:
+       # use the passed in name
+       roaches = sys.argv[1].split(',')
+
+    # examples:   
+    #roaches = ["vegasr2-%d" % i for i in range(1,9)] 
+    #roaches = ["srbsr2-1"]
+
+    print "roaches: ", roaches
     for r in roaches:
          find_mmcms(r)
-    #adc0s = [3, 9, None]
-    #adc1s = [2, 2, 2]
-    #adc0 = None
-    #adc1 = None
-    #print has_adc_difference(adc0, adc1, adc0s, adc1s)
 
-def get_mmcm_info(fn, cp):
-    "Reads the vegas.conf file and gathers info on modes"
+def get_roach_names_from_config(confdir):
+
+    fn = "%s/%s" % (confdir, "vegas.conf")
+    cp = ConfigParser.ConfigParser()
     r = cp.read(fn)
     if len(r)==0:
-        raise Exception("Could not read file: %s" % fn)
+        print "Could not find roach names from: ", fn
+        return []
+    
+    # what banks to read?
+    sec = "DEFAULTS"
+    subsys = cp.get(sec, "subsystems")
+    subsys = [int(s) for s in subsys.split(',')]
+    banks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
-    sec = "MMCM"
-    nentries = int(cp.get(sec, "num_entries"))
-    logger.debug("Loading %d groups of entries in MMCM section." % nentries)
-    info = []
-    for i in range(nentries):
-        opt = "mode[%d]" % i
-        modes = cp.get(sec,opt)
-
-        opt = "boff[%d]" % i
-        bof = cp.get(sec,opt)
-
-        opt = "freq[%d]" % i
-        frq = cp.getfloat(sec,opt)
-
-        opt = "adc0[%d]" % i
-        try:
-            adc0 = cp.getfloat(sec,opt)
-        except ValueError:
-            adc0 = None # there are Nones in here
-
-        opt = "adc1[%d]" % i
-        try:
-            adc1 = cp.getfloat(sec,opt)
-        except ValueError:
-            adc1 = None
-
-        info.append((modes, bof, frq, adc0, adc1))
-        tmsg = "Modes: %s, Freq: %s, Bof: %s, Adc0: %s, Adc1: %s" % (modes, frq, bof, adc0, adc1)
-        logger.debug(tmsg)
-    return info    
+    # what roaches corresopond to those banks?
+    roaches = []
+    for s in subsys:
+        bank = banks[s-1]
+        sec = "BANK%s" % bank
+        # roach_host = vegasr2-1.gb.nrao.edu
+        roaches.append(cp.get(sec, "roach_host").split('.')[0])
+    return roaches    
+    
+def get_config_filename(roach_name): 
+    fn = "%s/%s-adc.conf" % (confdir, roach_name)
+    logger.info("MMCM config file: %s" % fn)
+    return fn
 
 def find_mmcms(roach_name):
     """
@@ -87,6 +84,7 @@ def find_mmcms(roach_name):
     for all the different combinations of bof file and frequency.
     """
 
+    # connect to roach
     tmsg = 'Connecting to %s'%roach_name
     logger.info(tmsg)
     roach = corr.katcp_wrapper.FpgaClient(roach_name)
@@ -106,39 +104,30 @@ def find_mmcms(roach_name):
                      #, test = True)
 
     # read the config file and find the mmcm  through each mode
-    fn = "%s-mmcm.conf" % roach_name
-    logger.info("MMCM config file: %s" % fn)
-    cp = ConfigParser.ConfigParser()
+    fn = get_config_filename(roach_name)
+    cp = ADCConfFile(fn)
 
-    info = get_mmcm_info(fn, cp)
-
-    # mark this file as update
-    cp.set("MMCM", "last_updated", datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"))
-
-    #for mode, bof, frq, adc0, adc1 in info:
-    for i in range(len(info)):
-        modes, bof, frq, adc0, adc1 = info[i]
+    for key, value in cp.mmcm_info.items():
+        bof, frq = key
+        i, adc0, adc1, _ = value
         # determine the MMCM optimal phase values for this combo
         # of bof file and frequency
         adc0s = []
         adc1s = []
-        for trial in range(4):
+        trails = 1
+        for trial in range(trails):
             adc0, adc1 = find_this_mmcm(v, cal, roach, bof, frq)
             tmsg = "Found ADC mmcm's for trial %d: %s, %s" % (trial, adc0, adc1)
+            print tmsg
             logger.info(tmsg)
             if has_adc_difference(adc0, adc1, adc0s, adc1s):
                 adc0s.append(adc0)
                 adc1s.append(adc1)
 
-        # write it to the conf file
-        opt = "adc0[%d]" % i
-        cp.set("MMCM", opt, value = ",".join([str(x) for x in adc0s]))
-        opt = "adc1[%d]" % i
-        cp.set("MMCM", opt, value = ",".join([str(x) for x in adc1s]))
+        cp.write_mmcms(bof, frq, 0, adc0s)
+        cp.write_mmcms(bof, frq, 1, adc1s)
 
-
-    with open(fn, 'wb') as configfile:
-        cp.write(configfile) 
+    cp.write_to_file()
 
 def has_adc_difference(adc0, adc1, adc0s, adc1s):
     assert len(adc0s) == len(adc1s)
@@ -159,7 +148,7 @@ def is_within_tolerance(x, y, tolerance):
         return True
     # one of them is None and the other isn't    
     if x is None or y is None:
-        return False
+        return True # if this were False we'd get None's written to .conf!
     # none of them are none
     return abs(x - y) < tolerance
 
