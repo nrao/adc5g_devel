@@ -25,6 +25,7 @@ class ADCCalibrations:
                , mmcm_trials = None
                , ogp_trials = None
                , test_tone = None
+               , ampl = None
                , now = None
                , gpib_addr = None):
 
@@ -41,6 +42,7 @@ class ADCCalibrations:
         # ogps/inls
         self.ogp_bof = 'h1k_ver106_2014_Apr_11_1612.bof'
         self.testfreq = test_tone if test_tone is not None else 18.3105 # MHz
+        self.ampl = ampl if ampl is not None else -3
         self.ogp_trials = ogp_trials if ogp_trials is not None else 10
         self.gpibaddr = gpib_addr if gpib_addr is not None else '10.16.96.174' # tape room
 
@@ -141,7 +143,7 @@ class ADCCalibrations:
         # MMCM and OGP calibrations are done), let's do one INL
         for z in range(2):
             self.cal.do_inl(z)
-            self.adcConf.write_inls(z, self.inl.inls)
+            self.adcConf.write_inls(z, self.cal.inl.inls)
         self.adcConf.write_to_file()    
 
     def change_bof(self, bof):
@@ -174,6 +176,9 @@ class ADCCalibrations:
             tmsg = "Valon Synth changed to frequency: %f MHz" % current_clkrate
             logger.info(tmsg)
 
+        # in addition, this class uses clockrate for ogps
+        self.cal.set_clockrate(clkrate)
+
     def find_this_ogp(self, freq):
     
 
@@ -187,10 +192,13 @@ class ADCCalibrations:
         # since we reprogrammed the roach, mmcm calibrate
         self.cal.do_mmcm(2)
 
+        # TBF: do this once manually at the beginning? 
+        self.cal.gpib_test(2, self.testfreq, self.ampl, manual=False)
+
         # now find the ogps
         self.cal.do_ogp(0, self.testfreq, self.ogp_trials)
         ogp0 = self.cal.ogp.ogps
-        self.cal.do_ogp(0, self.testfreq, self.ogp_trials)
+        self.cal.do_ogp(1, self.testfreq, self.ogp_trials)
         ogp1 = self.cal.ogp.ogps
 
         return ogp0, ogp1
@@ -275,10 +283,13 @@ class ADCCalibrations:
         return adc0, adc1
             
 if __name__ == "__main__":    
+
+    logging.config.fileConfig('adc_cal_logging.conf')
     logger = logging.getLogger('adc5gLogging')
     logger.info("Started")
-    roach = 'vegasr2-1'
-    cals = ADCCalibrations(test = True, roaches = [roach], mmcm_trials = 1)
+    roach = 'srbsr2-1'
+    cals = ADCCalibrations(test = False, roaches = [roach], mmcm_trials = 1)
     #cals.find_all_mmcms()
     cals.find_all_calibrations()
+    #cals.find_all_ogps()
 
