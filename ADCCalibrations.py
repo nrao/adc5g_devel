@@ -20,7 +20,8 @@ class ADCCalibrations:
 
     def __init__(self
                , test = False
-               , dir = None
+               , conf_dir = None
+               , data_dir = None
                , roaches = None
                , mmcm_trials = None
                , ogp_trials = None
@@ -31,7 +32,8 @@ class ADCCalibrations:
 
         self.test = test
         self.now = now
-        self.dir = dir if dir is not None else '.'
+        self.conf_dir = conf_dir if conf_dir is not None else '.'
+        self.data_dir = data_dir if data_dir is not None else '.'
         self.roaches = roaches if roaches is not None else self.get_roach_names_from_config()
         self.banks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
@@ -69,7 +71,7 @@ class ADCCalibrations:
     def get_roach_names_from_config(self):
         "Determines what roaches to connect to from the vegas.conf file"
     
-        fn = "%s/%s" % (self.dir, "vegas.conf")
+        fn = "%s/%s" % (self.conf_dir, "vegas.conf")
         r = cp.read(fn)
         if len(r)==0:
             print "Could not find roach names from: ", fn
@@ -89,8 +91,8 @@ class ADCCalibrations:
             roaches.append(cp.get(sec, "roach_host").split('.')[0])
         return roaches    
         
-    def get_config_filename(self, roach_name): 
-        fn = "%s/%s-adc.conf" % (self.dir, roach_name)
+    def get_adc_config_filename(self, roach_name): 
+        fn = "%s/%s-adc.conf" % (self.conf_dir, roach_name)
         logger.info("MMCM config file: %s" % fn)
         return fn
 
@@ -112,7 +114,7 @@ class ADCCalibrations:
             self.valon = ValonKATCP(self.roach, valonSerial) 
     
         # this is the object that will find the MMCM value
-        self.cal = ADCCalibrate(dir = self.dir 
+        self.cal = ADCCalibrate(dir = self.data_dir 
                          , roach_name = roach_name
                          , gpib_addr = self.gpibaddr
                          , roach = self.roach
@@ -120,7 +122,7 @@ class ADCCalibrations:
                          , test = self.test)
     
         # read the config file and find the mmcm  through each mode
-        fn = self.get_config_filename(roach_name)
+        fn = self.get_adc_config_filename(roach_name)
         self.adcConf = ADCConfFile(fn)
 
     def find_ogps(self, roach_name):
@@ -284,11 +286,16 @@ class ADCCalibrations:
             
 if __name__ == "__main__":    
 
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')
+    AdcCalLoggingFileHandler.timestamp = current_time
+
     logging.config.fileConfig('adc_cal_logging.conf')
     logger = logging.getLogger('adc5gLogging')
     logger.info("Started")
     roach = 'srbsr2-1'
-    cals = ADCCalibrations(test = False, roaches = [roach], mmcm_trials = 1)
+    d = 'tmp'
+
+    cals = ADCCalibrations(test = False, data_dir = d, roaches = [roach], mmcm_trials = 1)
     #cals.find_all_mmcms()
     cals.find_all_calibrations()
     #cals.find_all_ogps()
