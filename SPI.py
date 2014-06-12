@@ -177,6 +177,28 @@ class SPI:
         else:
             return reg_val
 
+    def inl_values_to_reg_values(self, offs):
+        level_to_bits = np.array([5,4,6,1,0,2,9,8,10])
+    
+        # create a array of 6 ints to hold the values for the registers
+        regs = np.zeros((6), dtype='int32')
+        r = 2	# r is the relative register number.  R = 2 for 0x32 and 0x35
+        regbit = 8 #  regbit is the bit in the register
+        for level in range(17):	# n is the bit number in the incoming bits aray
+            n = int(floor(0.5 + offs[level]/0.15))
+            if n > 4:
+                n = 4
+            if n < -4:
+                n = -4
+    	    i = level_to_bits[4-n]
+            regs[r] |= ((i >>2) & 3) << regbit
+            regs[r + 3] |= (i & 3)<< regbit
+            if regbit == 14:
+                r -= 1
+                regbit = 0
+            else:
+                regbit += 2
+        return regs
 
     def set_inl_registers(self, chan, offs):
         """
@@ -196,27 +218,7 @@ class SPI:
         See: http://www.e2v.com/e2v/assets/File/documents/broadband-data-converters/doc0846I.pdf,
          specifically section 8.7.19 through 8.8, for more details.
         """
-        level_to_bits = np.array([5,4,6,1,0,2,9,8,10])
-    
-        # create a array of 6 ints to hold the values for the registers
-        regs = np.zeros((6), dtype='int32')
-        r = 2	# r is the relative register number.  R = 2 for 0x32 and 0x35
-        regbit = 8 #  regbit is the bit in the register
-        for level in range(17):	# n is the bit number in the incoming bits aray
-            n = int(floor(0.5 + offs[level]/0.15))
-            if n > 4:
-                n = 4
-            if n < -4:
-                n = -4
-    	    i = level_to_bits[4-n]
-
-            regs[r] |= ((i >>2) & 3) << regbit
-            regs[r + 3] |= (i & 3)<< regbit
-            if regbit == 14:
-                r -= 1
-                regbit = 0
-            else:
-                regbit += 2
+        regs = self.inl_values_to_reg_values(offs)
         self.set_spi_register(CHANSEL_REG_ADDR, chan)
         for n in range(6):
     	    reg_val = float(regs[n])
