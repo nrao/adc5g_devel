@@ -80,6 +80,37 @@ class SPITest(unittest.TestCase):
 
         self.assertEqual(exp, regs)
 
+        spi.set_offsets([0.0, 0.0, 0.0, 0.0])
+        regs = [(hex(int(x)), hex(int(y))) for x, y in spi.regs]
+
+    def test_set_offset_2(self):
+
+      
+        spi = SPI(zdok = 0, test = True)
+        self.assertEqual(spi.regs, [])
+
+        offsets = [0.0]*4
+
+        spi.set_offsets(offsets)
+
+        self.assertEqual(len(spi.regs), 12)
+        regs = [(hex(int(x)), hex(int(y))) for x, y in spi.regs]
+        exp = [('0x8f', '0x1')
+             , ('0xa0', '0x80')
+             , ('0x90', '0x8')
+             , ('0x8f', '0x2')
+             , ('0xa0', '0x80')
+             , ('0x90', '0x8')
+             , ('0x8f', '0x3')
+             , ('0xa0', '0x80')
+             , ('0x90', '0x8')
+             , ('0x8f', '0x4')
+             , ('0xa0', '0x80')
+             , ('0x90', '0x8')
+             ]
+
+        self.assertEqual(exp, regs)
+
     def test_set_gains(self):
 
         spi = SPI(zdok = 0, test = True)
@@ -135,6 +166,14 @@ class SPITest(unittest.TestCase):
         exp = [('0x8f', '0x2'), ('0xb0', '0x4'), ('0xb1', '0x2'), ('0xb2', '0x0'), ('0xb3', '0x9'), ('0xb4', '0x6949'), ('0xb5', '0x8000'), ('0x90', '0x2')]
         
         self.assertEqual(exp, regs)
+
+    def test_inl_values_to_reg_values(self):
+
+        spi = SPI(zdok = 0, test = True)
+        values = [ 0., -0.0049, -0.158,  -0.0952,  0.0614,  0.0008, -0.0537,  0.161,   0.1902, 0.5033,  0.327,   0.2102,  0.1048, -0.0875, -0.2342, -0.0445,  0.    ]
+        regs = spi.inl_values_to_reg_values(values)
+        exp = [32, 5120, 0, 25, 24896, 40960]
+        self.assertEqual(exp, list(regs))
 
 
     def test_get_inl_registers(self):
