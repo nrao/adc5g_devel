@@ -51,7 +51,8 @@ class OGPTest(unittest.TestCase):
     def test_do_ogp(self):
 
         # do both zdoks
-        self.adc.do_ogp(2)  
+        self.adc.do_ogp(0)  
+        self.adc.do_ogp(1)  
 
         # read the results generated from the files
         fns = ['testdata/ogp_noroach_z%d_2014-04-24-090838' % i for i in range(2)]

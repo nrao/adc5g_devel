@@ -12,8 +12,9 @@ class ADCCalibrationsTest(unittest.TestCase):
     def setUp(self):
         # setup this class for unit tests
         now =  datetime(2014, 4, 24, 9, 8, 38)
-        self.adc = ADCCalibrations(dir = 'testdata'
+        self.adc = ADCCalibrations(data_dir = 'testdata'
                                  , test = True
+                                 , conf_dir = 'testdata'
                                  , mmcm_trials = 1
                                  , roaches = ['noroach']
                                  , now = now
