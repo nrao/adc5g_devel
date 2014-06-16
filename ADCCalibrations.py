@@ -28,6 +28,7 @@ class ADCCalibrations:
                , test_tone = None
                , ampl = None
                , now = None
+               , manual = False
                , gpib_addr = None):
 
         self.test = test
@@ -36,6 +37,7 @@ class ADCCalibrations:
         self.data_dir = data_dir if data_dir is not None else '.'
         self.roaches = roaches if roaches is not None else self.get_roach_names_from_config()
         self.banks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+        self.manual = manual
 
         # mmcms
         self.mmcm_trials = mmcm_trials if mmcm_trials is not None else 5
@@ -135,8 +137,9 @@ class ADCCalibrations:
             tmsg = "Finding OGPs for clockrate: %s" % frq
             logger.info(tmsg)
             ogp0, ogp1 = self.find_this_ogp(frq)
-            self.adcConf.write_ogps(frq, 0, ogp0)
-            self.adcConf.write_ogps(frq, 1, ogp1)
+            if ogp0 is not None and ogp1 is not None:
+                self.adcConf.write_ogps(frq, 0, ogp0)
+                self.adcConf.write_ogps(frq, 1, ogp1)
 
         self.adcConf.write_to_file()
 
@@ -195,7 +198,9 @@ class ADCCalibrations:
         self.cal.do_mmcm(2)
 
         # TBF: do this once manually at the beginning? 
-        self.cal.gpib_test(2, self.testfreq, self.ampl, manual=False)
+        if not self.cal.gpib_test(2, self.testfreq, self.ampl, manual=self.manual):
+            logger.info("canceling find_this_ogp for frequency %s" % freq)
+            return None, None
 
         # now find the ogps
         self.cal.do_ogp(0, self.testfreq, self.ogp_trials)
