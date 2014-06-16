@@ -1,6 +1,6 @@
 # Introduction
 
-The Roach 2 boards used for Vegas and DIBAS each have two ADC cards.  On the time scale of a few times a year, these cards need to be calibrated.  In addition, whenever the boards are power cycled, the calibration results need to be reloaded.
+The Roach 2 boards used for Vegas and DIBAS each have two ADC cards.  On the time scale of a few times a year, these cards need to be calibrated.  In addition, whenever the boards are power cycled, reprogrammed or clockrate changed, some of these different calibration results need to be reloaded.
 
 This document describes the AdcCalibration code, which performs the above tasks.
 
@@ -20,21 +20,54 @@ This document describes the AdcCalibration code, which performs the above tasks.
    * SPI -  The Serial Peripheral Interface or SPI bus is a synchronous serial data link, a de facto standard, named by Motorola, that operates in full duplex mode. It is used for short distance, single master communication, for example in embedded systems, sensors, and SD cards.
    * zdok - 0 or 1. Basically refers to one of the two ADC cards.
 
+# Calibration Types and Dependencies
+
+As mentioned above, there are 3 types of calibration measurements: MMCM, OGP, and INL.  Some of these depend on different factors, so different calibration results will need to be tracked for different conditions.
+
+MMCM - these values change with every different bof file and roach board clockrate used.  In addition, everytime the roach board is reprogrammed these values must be reset.  In addition, these calibration results can change slightly between each calibration run, and ALSO, there can more then one valid result.
+
+OGP - these values depend on roach board clockrate.  They only need to be reloaded after a power cycle, or when the clockrate changes. 
+
+INL - the values do not depend on bof or clockrate.  They need only be reloaded after a power cycle.
+
+# Overview of usage
+
+As stated in the introduction, this code is for finding and reloading different calibration results for the adc5g cards.  Here's a brief overview of how to use this code.  
+
+First, make sure your hardware is setup properly: 
+   * Is the roach on the network?  Can you connect to it with a katcp client?
+   * Are the necessary bof files accessible to the roach (roach.listbof())
+   * Attach a test tone to the ADC input, and make sure it's at the default frequency (18.30 MHz).  This is needed for the OGP and INL calibrations.
+
+Now, run some experimental trials on just one roach board using _adc\_calibration.py_.  This will help you determine whether the test tone is setup properly.  Use the default settings for this script so that results are not written to the <roachname>-adc.conf file. You can use the -d option for writing the various output files to a different directory if you want to manage all the files better.
+
+Once you are confident that calibrating a single roach board for specific conditions (bof, clockrate) is working, try running _adc\_all\_calibraitons.py_ for a single roach board, writting the results to the roachname-adc.conf file.  This may take a few minutes.  If this looks good, go ahead and run the same script for all your roach boards. 
+
 # Details
 
 ## Files and Classes:
 
-   * _adc\_calibration.py_:  This is the main entry point for program that calibrates the cards.
+### High-level scripts
+   * _adc\_all\_calibrations.py_:  This is the main entry point for calibrating all your roach boards in all sets of conditions (bof, clockrate)
+   * _adc\_calibration.py_:  This is the main entry point for calibrating a single roach board, one set of conditions (bof, clockrate) at a time. 
    * _adc\_load\_calibration.py_: This is the main entry point for reloading calibration results from files.
-   * _adc\_read\_only\_check.py_: This is an entry point for simply taking snapshots of the ADC data.
+   * _adc\_read\_only\_check.py_: This is an entry point for simply taking snapshots of the ADC data and reading the current OPG and INL values.
+
+### Classes and other files:   
    * _adc\_cal\_logging.conf_: This is the configuration file used by the logger for this software package.
-   * _ADCCalibrate.py_: The ADCCalibrate class the main top-level class used by the two entry points ('main's) described above.  It in turn uses a suite of helper classes (see below) to perform the actual calibration.  It may interact with the user.
+   * _roachname-adc.conf_: Where 'roachname' is the name of the roach.  This is where the different ADC calibration values for the named roach can be stored.
+   * _ADCCalibrations.py_: A top-level class that utilizes _ADCCalibrate.py_ for calibrating multiple roach boards in all necessary conditions (bof, clockrate).
+   * _ADCCalibrate.py_: The ADCCalibrate class is the main top-level class used by some of the entry points ('main's) described above.  It is used for calibrating a single roach board in a single set of conditions (bof, clockrate).  It in turn uses a suite of helper classes (see below) to perform the actual calibration.  It may interact with the user.
    * _MMCM.py_: This is a mid-level class that is responsible for performing the MMCM calibration.  It does not directly interact with hardware.
    * _OGP.py_: This is a mid-level class responsible for obtaining and/or loading the Offset, Gain, and Phase measurements.  It does not directly interact with hardware.
    * _INL.py_: This is a mid-level class responsible for obtaining and/or loading the Integral Non Linearity measurements.  It does not directly interact with hardware.
    * _SPI.py_: This is a low-level class that is responsible for communicating with the ADC cards via the FPGA's 'adc5g_controller' pseudo-register.  It *does* interact directly with hardware.
    * _AdcSnapshot.py_ : This is a low-level class responsible for taking 'snapshot's of the ADC data via the FPGA.  It *does* interact directly with hardware.
    * _GPIB.py_: This is a low-level class responsible for communicating with a synthesizer via gpib for setting only frequency and amplitude.  It *does* interact directly with hardware.
+   * _ADCConfFile.py_: This is a simple class for reading/writing to/from the roachname-adc.conf file.
+   * _fit\_cores.py_: This module does the fitting needed for the OGP/INL calculations.
+   * _valon\_katcp.py: Simple module used for controlling the valon synth that drives the roach boards clockrate.
+
 
 ## Output Files
 
@@ -56,3 +89,4 @@ Here's some of the important plot files:
    * post_mmcm_ramp_check_[roach]_z[zdoks]_[timestamp].png - a raw data plot done after the MMCM calibration phase. 
    * raw_startup_[roach]_z[zdoks]_[timestamp].png - a raw data plot done before calibrations are completed.
 
+You can control where these files are written to via the high-level script command line options.
