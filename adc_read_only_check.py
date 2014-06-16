@@ -28,6 +28,10 @@ def main():
         help='ZDOK, 0 or 1, if input is 2, then refers to both. Default = 2')
     p.add_option('-d', '--directory', dest='dir', type='str', default='.',    
         help='name of directory to put all files')
+    p.add_option('-o', '--read_ogp', dest='read_ogp', action='store_true', default=False,
+        help='Read the OGP values from the hardware') 
+    p.add_option('-i', '--read_inl', dest='read_inl', action='store_true', default=False,
+        help='Read the INL values from the hardware') 
     opts, args = p.parse_args(sys.argv[1:])
 
     # setup log file name:
@@ -69,13 +73,20 @@ def main():
                      , roach = r)
 
     # What are the currently loaded OGP values in the Card?
-    chs = range(1,5)
-    os = [cal.spi.get_offset(c) for c in chs]
-    gs = [cal.spi.get_gain(c)   for c in chs]
-    ps = [cal.spi.get_phase(c)  for c in chs]
-    logger.info("Offsets: %s" % os)
-    logger.info("Gains: %s" % gs)
-    logger.info("Phases: %s" % ps)
+    if opts.read_ogp:
+        chs = range(1,5)
+        os = [cal.spi.get_offset(c) for c in chs]
+        gs = [cal.spi.get_gain(c)   for c in chs]
+        ps = [cal.spi.get_phase(c)  for c in chs]
+        logger.info("Offsets: %s" % os)
+        logger.info("Gains: %s" % gs)
+        logger.info("Phases: %s" % ps)
+
+    if opts.read_inl:
+        cal.set_zdok(0)
+        print cal.inl.get_inl_array()
+        cal.set_zdok(1)
+        print cal.inl.get_inl_array()
 
     i = 0
     while cal.user_input("Check ADC output?"):
