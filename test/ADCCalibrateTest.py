@@ -14,6 +14,7 @@ class ADCCalibrateTest(unittest.TestCase):
         now =  datetime(2014, 4, 24, 9, 8, 38)
         self.adc = ADCCalibrate(dir = 'testdata'
                               , now = now
+                              , roach_name = 'noroach'
                               , test = True)
 
         # Uncomment this code if you want the logs to stdout 
@@ -58,8 +59,18 @@ class ADCCalibrateTest(unittest.TestCase):
         exp = ["%s/ogp_noroach_z%d_2014-04-24-090838" % (indir, 1)]
         self.assertEquals(exp, self.adc.loaded_files)
 
+    def test_load_calibrations_2(self):
+
+        indir = 'testdata'
+        self.adc.load_calibrations(indir = indir, use_conf = True, freq = 1500.0) 
+
+        self.assertEquals([], self.adc.loaded_files)
+
+        # probe the lower level objects to make sure commands were sent
+        self.assertEqual(138, len(self.adc.spi.regs))
+
     # *************** The below tests are using dummy input data, so checking their
-    # results is of limited value.  Here we basically make sure theres failures.
+    # results is of limited value.  Here we basically make sure theres no failures.
 
     def test_check_ramp(self):
 

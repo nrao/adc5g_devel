@@ -96,7 +96,7 @@ class ADCCalibrate:
 
         self.configFile = "%s-adc.conf" % roach_name
         self.configPath = "%s/%s" % (dir, self.configFile)
-        self.cf = None #ADCConfFile(self.configPath)
+        self.cf = ADCConfFile(self.configPath)
 
         self.n_cores = 4
         self.cores = range(1,self.n_cores+1)
@@ -159,7 +159,13 @@ class ADCCalibrate:
         logger.debug("user response: \t%s" % response)
         return response in ["Y", "y"]
         
-    def load_calibrations(self, indir = None, zdoks = None, types = None):
+    def load_calibrations(self
+                        , indir = None
+                        , zdoks = None
+                        , types = None
+                        , use_conf = False
+                        , freq = None):
+
         "Loads the most recent ogp, inl calibration files and loads them into the ADC Cards."
 
         # where to find the calibration files?
@@ -192,33 +198,60 @@ class ADCCalibrate:
                 logger.debug(msg)
                 raise Exception, msg 
 
-        #example file: ogp_noroach_z0_2014-04-24-090838
+        if use_conf and freq is None:
+            msg = "Must specify freq (MHz) if .conf file is used for loading calibrations."
+            logger.debug(msg)
+            raise Exception, msg
 
-        # go through and find the most recent of each type
-        # of file needed
-        self.loaded_files = []
-        for type in types: 
+        if use_conf:
+            self.load_calibrations_from_conf(indir, zdoks, types, freq)
+        else:
+            # go through and find the most recent of each type
+            # of file needed
+            #example file: ogp_noroach_z0_2014-04-24-090838
+            self.loaded_files = []
+            for type in types: 
+                for zdok in zdoks:
+                    ext = "" if type == 'ogp' else ".meas"
+                    base_name = "%s_%s_z%s_*%s" % (type, self.roach_name, zdok, ext)
+                    # Rely on the timestamp at the end of the file name to make sure we
+                    # get the most recent file
+                    files = sorted([f for f in os.listdir(indir) if fnmatch.fnmatch(f, base_name)]
+                                  , reverse = True)
+                    if len(files) > 0:
+                        f = "%s/%s" % (indir, files[0])
+                        if type == 'ogp':
+                            self.ogp.load_from_file(f, zdok = zdok)
+                        else:    
+                            self.inl.load_from_file(f, zdok = zdok)
+                        logger.info("Loading file for calibration: %s" % f)    
+                        self.loaded_files.append(f)    
+                    else:
+                        msg = "load_calibrations: Could not find files in %s matching pattern %s" % (indir, base_name)
+                        logger.debug(msg)
+                        raise Exception, msg 
+                    
+                    
+    def load_calibrations_from_conf(self, indir, zdoks, types, freq):
+        "Load calibrations from the <roach>-adc.conf file found in given directory."
+        filename = "%s/%s" % (indir, self.configFile)
+        self.cf.read_file(filename)
+        for type in types:
             for zdok in zdoks:
-                ext = "" if type == 'ogp' else ".meas"
-                base_name = "%s_%s_z%s_*%s" % (type, self.roach_name, zdok, ext)
-                # Rely on the timestamp at the end of the file name to make sure we
-                # get the most recent file
-                files = sorted([f for f in os.listdir(indir) if fnmatch.fnmatch(f, base_name)]
-                              , reverse = True)
-                if len(files) > 0:
-                    f = "%s/%s" % (indir, files[0])
-                    if type == 'ogp':
-                        self.ogp.load_from_file(f, zdok = zdok)
-                    else:    
-                        self.inl.load_from_file(f, zdok = zdok)
-                    logger.info("Loading file for calibration: %s" % f)    
-                    self.loaded_files.append(f)    
-                else:
-                    msg = "load_calibrations: Could not find files in %s matching pattern %s" % (indir, base_name)
-                    logger.debug(msg)
-                    raise Exception, msg 
+                if type == 'ogp':
+                    self.ogp.set_zdok(zdok)
+                    self.ogp.spi.set_control()
+                    self.ogp.set_offsets(self.cf.get_ogp_offsets(freq, zdok))
+                    self.ogp.set_gains(  self.cf.get_ogp_gains(freq, zdok))
+                    self.ogp.set_phases(  self.cf.get_ogp_phases(freq, zdok))
+                elif type == 'inl':
+                    self.inl.set_inls(self.cf.get_inls(zdok))
+
+
                     
-                    
+
+
+
     def do_ogp(self, zdoks, freq, n_trails):
         "Handles single zdok, or both"
         if zdoks==2:

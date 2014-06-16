@@ -61,11 +61,14 @@ class INL:
         of 5 columns.  The first column contains the level and is ignored.
         Columns 2-5 contain the inl correction for cores a-d
         """
+        c = np.genfromtxt(filename, usecols=(1,2,3,4), unpack=True)
+        self.set_inls(c)
+
+    def set_inls(self, inls, zdok = None):
         if zdok is not None:
             self.set_zdok(zdok)
-        c = np.genfromtxt(filename, usecols=(1,2,3,4), unpack=True)
         for i in range(self.n_cores):
-            self.spi.set_inl_registers(self.cores[i], c[i])
+            self.spi.set_inl_registers(self.cores[i], inls[i])
 
     def do_inl(self, zdok):
        

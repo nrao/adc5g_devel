@@ -20,6 +20,8 @@ class ADCConfFile:
         self.inl_sec = "INL"
         self.inl_info = []
 
+        self.file_read = False
+
         if filename is not None:
             self.read_file(filename)
  
@@ -28,13 +30,17 @@ class ADCConfFile:
         self.filename = filename
         r = self.cp.read(filename)
         if len(r)==0:
-            raise Exception("Could not read file: %s" % filename)
+            #raise Exception("Could not read file: %s" % filename)
+            print "ADCConfFile could not read: %s" % filename 
+            return
 
         # TBF: convert all srtings from file to floats?
         self.read_mmcm_section()    
         self.read_ogp_section()    
         self.read_inl_section()    
     
+        self.file_read = True
+
     def read_mmcm_section(self):
         nentries = int(self.cp.get(self.mmcm_sec, "num_entries"))
         #logger.debug("Loading %d groups of entries in MMCM section." % nentries)
@@ -102,6 +108,9 @@ class ADCConfFile:
     def write_ogps(self, freq, zdok, values): 
         # overload this for use with different types
         ty = str(type(values))
+        if ty == "<type 'numpy.ndarray'>":
+            values = list(values)
+            ty = str(type(values))
         if ty in ["<type 'list'>", "<type 'tuple'>"]:
             values = ",".join(["%.4f" % o for o in values])
 
@@ -141,7 +150,35 @@ class ADCConfFile:
         with open(self.filename, 'wb') as configfile:
             self.cp.write(configfile) 
 
+    def get_mmcms(self, bof, freq, zdok):
+        i, mmcm0, mmcm1, modes = self.mmcm_info[(bof, freq*1e6)]
+        mmcms = [mmcm0, mmcm1]
+        return self.csStr2Ints(mmcms[zdok])
 
+    def get_ogp_offsets(self, freq, zdok):
+        return self.get_ogp_value(0, freq, zdok)
+
+    def get_ogp_gains(self, freq, zdok):
+        return self.get_ogp_value(1, freq, zdok)
+
+    def get_ogp_phases(self, freq, zdok):
+        return self.get_ogp_value(2, freq, zdok)
+
+    def get_ogp_value(self, offset, freq, zdok):    
+        i, ogp0, ogp1 = self.ogp_info[freq*1e6]
+        ogps = [ogp0, ogp1]
+        return self.csStr2Floats(ogps[zdok])[offset::3]
+
+    def get_inls(self, zdok):
+        return [self.csStr2Floats(inls) for inls in self.inl_info[zdok]]
+
+    def csStr2Floats(self, commaSeperatedStr):
+        return [float(x) for x in commaSeperatedStr.split(',')]
+
+    def csStr2Ints(self, commaSeperatedStr):
+        return [int(x) for x in commaSeperatedStr.split(',')]
+
+     
 
 if __name__ == "__main__":
 

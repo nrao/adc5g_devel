@@ -32,7 +32,7 @@ def main():
         help='ZDOK, 0 or 1, if input is 2, then refers to both. Default = 2')
     p.add_option('-t', '--types', dest='types', type='str', default='all',
         help='Which type of calibrations to load: [all, ogp, inl]')
-    p.add_option('-c', '--caldir', dest='caldir', type='str', default=None,
+    p.add_option('-l', '--caldir', dest='caldir', type='str', default=None,
         help='What directory to find the calibration files in')
     p.add_option('-f', '--file', dest='file', type='str', default=None,
         help='What specific file to use? -type & -zdok options must be used as well')
@@ -42,6 +42,11 @@ def main():
         help='IP Address of the GPIB.  Current default is set to tape room machine. Default = 10.16.96.174')
     p.add_option('-d', '--directory', dest='dir', type='str', default='.',    
         help='name of directory to put all files')
+    p.add_option('-u', '--use_conifg', dest='use_conifg', action='store_true', default=False,
+        help='Load calibrations found in <roachname>-adc.conf file?')
+    p.add_option('-c', '--clockrate', dest='clockrate', type='float', default=1500.0,
+        help='Clock rate in MHz; must be specified if --use_config option is specified')
+
     opts, args = p.parse_args(sys.argv[1:])
 
     # setup log file name:
@@ -124,6 +129,8 @@ def main():
             raise Exception, msg 
     else:
         cal.load_calibrations(indir = opts.caldir
+                            , use_conf = opts.use_conf
+                            , freq = opts.clockrate
                             , zdoks = opts.zdok
                             , types = types)
 
