@@ -72,21 +72,26 @@ def main():
                      , roach_name = opts.roach
                      , roach = r)
 
+    zdoks = [opts.zdok] if opts.zdok != 2 else [0,1]
+
     # What are the currently loaded OGP values in the Card?
+    chs = range(1,5)
     if opts.read_ogp:
-        chs = range(1,5)
-        os = [cal.spi.get_offset(c) for c in chs]
-        gs = [cal.spi.get_gain(c)   for c in chs]
-        ps = [cal.spi.get_phase(c)  for c in chs]
-        logger.info("Offsets: %s" % os)
-        logger.info("Gains: %s" % gs)
-        logger.info("Phases: %s" % ps)
+        for z in zdoks:
+            cal.set_zdok(z)
+            os = [cal.spi.get_offset(c) for c in chs]
+            gs = [cal.spi.get_gain(c)   for c in chs]
+            ps = [cal.spi.get_phase(c)  for c in chs]
+            logger.info("OGPs for zdok %s" % z)
+            logger.info("Offsets: %s" % os)
+            logger.info("Gains: %s" % gs)
+            logger.info("Phases: %s" % ps)
 
     if opts.read_inl:
-        cal.set_zdok(0)
-        print cal.inl.get_inl_array()
-        cal.set_zdok(1)
-        print cal.inl.get_inl_array()
+        for z in zdoks:
+            cal.set_zdok(z)
+            logger.info("INLs for zdok %s" % z)
+            logger.info("%s" % cal.inl.get_inl_array())
 
     i = 0
     while cal.user_input("Check ADC output?"):
