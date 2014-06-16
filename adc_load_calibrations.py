@@ -24,6 +24,8 @@ def main():
     p.set_description(__doc__)
     p.add_option('-v', '--verbosity', dest='verbosity',type='int', default=1,
         help='Verbosity level. Default: 1')
+    p.add_option('-p', '--skip_prog', dest='prog_fpga',action='store_false', default=True,
+        help='Skip FPGA programming (assumes already programmed).  Default: program the FPGAs')     
     p.add_option('-r', '--roach', dest='roach',type='str', default='srbsr2-1',
         help='ROACH IP address or hostname. Default: srbsr2-1')
     p.add_option('-z', '--zdok', dest='zdok', type='int', default=2,
@@ -36,8 +38,6 @@ def main():
         help='What specific file to use? -type & -zdok options must be used as well')
     p.add_option('-b', '--boffile', dest='boffile',type='str', default='h1k_ver105_2013_Dec_02_1551.bof',
         help='Boffile to program. Default: h1k_ver105_2013_Dec_02_1551.bof')
-    p.add_option('-p', '--prog_fpga', dest='prog_fpga',action='store_true', 
-        help='FPGA programming (assumes already programmed).  Default: do not program the FPGAs')
     p.add_option('-g', '--gpibaddr', dest='gpibaddr', type='str', default='10.16.96.174',
         help='IP Address of the GPIB.  Current default is set to tape room machine. Default = 10.16.96.174')
     p.add_option('-d', '--directory', dest='dir', type='str', default='.',    
@@ -95,7 +95,8 @@ def main():
 
     # TBF: we have to do this, or some subset, after the roach has
     # has been rebooted.  WHY?
-    cal.do_mmcm(opts.zdok)
+    if opts.prog_fpga:
+        cal.do_mmcm(opts.zdok)
 
     logger.info("Checking of spectrum after MMCM calibration.")
     fn = cal.get_check_filename("after_mmcm_spec", opts.zdok)
@@ -114,7 +115,7 @@ def main():
         if opts.types == 'ogp':
             cal.ogp.load_from_file(opts.file)
             logger.info("Loading calibration file %s" % opts.file)
-        elif opt.types == 'inl':
+        elif opts.types == 'inl':
             cal.inl.load_from_file(opts.file)
             logger.info("Loading calibration file %s" % opts.file)
         else:
