@@ -38,6 +38,10 @@ def main():
         help='name of directory where configuration files are found') 
     p.add_option('-m', '--manual', dest='manual', action='store_true', default=False,
         help='Manual control of the calibration process. Default=False')
+    p.add_option('-O', '--ogp_only', dest='ogp_only', action='store_true', default=False,
+        help='Don t do MMCMs, just OGPs. Default=False')
+    p.add_option('-C', '--mmcm_only', dest='mmcm_only', action='store_true', default=False,
+        help='Don t do OGPs, just MMCMs. Default=False')
     opts, args = p.parse_args(sys.argv[1:])
 
     # setup log file name:
@@ -79,6 +83,8 @@ def main():
                      , test_tone = opts.testfreq
                      , ampl = opts.ampl
                      , manual = opts.manual
+                     , do_ogps = not opts.mmcm_only
+                     , do_mmcms = not opts.ogp_only
                          )
 
      # and use it                    

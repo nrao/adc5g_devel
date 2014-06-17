@@ -29,6 +29,8 @@ class ADCCalibrations:
                , ampl = None
                , now = None
                , manual = False
+               , do_ogps = True
+               , do_mmcms = True
                , gpib_addr = None):
 
         self.test = test
@@ -38,6 +40,11 @@ class ADCCalibrations:
         self.roaches = roaches if roaches is not None else self.get_roach_names_from_config()
         self.banks = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
         self.manual = manual
+
+        self.do_mmcms = do_mmcms
+        self.do_ogps = do_ogps
+        if not self.do_ogps and not self.do_mmcms:
+            raise Exception("One of do_ogps and do_mmcms must be True")
 
         # mmcms
         self.mmcm_trials = mmcm_trials if mmcm_trials is not None else 5
@@ -59,8 +66,10 @@ class ADCCalibrations:
         self.adcConf = None
 
     def find_all_calibrations(self):
-        self.find_all_mmcms()
-        self.find_all_ogps()
+        if self.do_mmcms:
+            self.find_all_mmcms()
+        if self.do_ogps:
+            self.find_all_ogps()
 
     def find_all_ogps(self):
         for r in self.roaches:
