@@ -506,7 +506,7 @@ class ADCCalibrate:
             close()
         return
             
-    def ampl_setup(self, zdok, manual=True, new_ampl=None):
+    def ampl_setup(self, zdok, manual=True, new_ampl=None, check_ampl=False):
         ampl = self.gpib.ampl
         # User interactions
         logmsg = "Changing input power level...current: " + str(ampl)
@@ -521,8 +521,11 @@ class ADCCalibrate:
                 return
             else:
                 new_ampl = float(new_ampl_raw)
-        if new_ampl<-15 or new_ampl>10:
-            logmsg = "ampl " + str(new_ampl) + " too big or too small"
+        # TBF: these limits seem arbitrary        
+        too_low = -15
+        too_high = 10
+        if check_ampl and (new_ampl<too_low or new_ampl>too_high):
+            logmsg = "ampl " + str(new_ampl) + " too big or too small (range: " + str(too_low) + "-" + str(too_high) + ")"
             logger.error(logmsg)
             raise Exception, logmsg
             exit()
