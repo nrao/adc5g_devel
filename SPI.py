@@ -226,26 +226,27 @@ class SPI:
         self.set_spi_register(CALCTRL_REG_ADDR, 2)
 
     def get_inl_registers(self, chan):
-        bits_to_off = np.array([0,1,-1,0,3,4,2,0,-3,-2,-4])
-        offs = np.zeros((17), dtype = float)
         regs = np.zeros((6), dtype='int32')
-    
         self.set_spi_register(CHANSEL_REG_ADDR, chan)
         for n in range(6):
-            # TBF:
             if not self.test:
                 regs[n] = self.get_spi_register(FIRST_EXTINL_REG_ADDR-0x80+n)
-    
+        return self.inl_regs_to_inl_vals(regs)
+
+
+    def inl_regs_to_inl_vals(self, regs):
+        bits_to_off = np.array([0,1,-1,0,3,4,2,0,-3,-2,-4])
+        offs = np.zeros((17), dtype = float)
         r = 2	# r is the relative register number.  R = 2 for 0x32 and 0x35
         regbit = 8	#  regbit is the bit in the register
         for level in range(17):	# n is the bit number in the incoming bits aray
             bits = 0xc & ((regs[r]>>regbit)<<2) | 3 & (regs[r+3]>>regbit)
-    	offs[level] = 0.15 * bits_to_off[bits]
-    	if regbit == 14:
-    	    regbit = 0
-    	    r -= 1
-    	else:
-    	    regbit += 2
+    	    offs[level] = 0.15 * bits_to_off[bits]
+    	    if regbit == 14:
+    	        regbit = 0
+    	        r -= 1
+    	    else:
+    	        regbit += 2
         return offs
 
     def set_control(self, adcmode=8, stdby=0, dmux=1, bg=1, bdw=3, fs=0, test=0):

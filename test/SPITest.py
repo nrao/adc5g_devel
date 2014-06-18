@@ -186,6 +186,15 @@ class SPITest(unittest.TestCase):
         exp = [0.0]*17 
         self.assertEqual(exp, list(offs))
 
+    def test_inl_regs_to_inl_vals(self):
+
+        spi = SPI(zdok = 0, test = True)
+        regs = [   10,  5460, 40960,    37, 17749, 16384]
+        vals = spi.inl_regs_to_inl_vals(regs)
+        exp = [ 0.,0.,-0.45,-0.3,0.15,0.6,0.6,0.6,0.6,0.6,0.45,0.15,-0.3,-0.3,-0.15,0.,0.]
+        for i in range(len(vals)):
+            self.assertAlmostEquals(exp[i], vals[i], 2)
+
     def test_get_control(self):
 
         spi = SPI(zdok = 0, test = True)

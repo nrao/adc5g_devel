@@ -91,7 +91,10 @@ def main():
         for z in zdoks:
             cal.set_zdok(z)
             logger.info("INLs for zdok %s" % z)
-            logger.info("%s" % cal.inl.get_inl_array())
+            a = cal.inl.get_inl_array()
+            logger.debug( "lvl  A     B     C     D")
+            for level in range(17):
+                logger.debug( "%3d %5.2f %5.2f %5.2f %5.2f" % tuple(a[level]))
 
     i = 0
     while cal.user_input("Check ADC output?"):
