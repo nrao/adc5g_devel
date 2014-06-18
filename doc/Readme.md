@@ -41,7 +41,39 @@ First, make sure your hardware is setup properly:
 
 Now, run some experimental trials on just one roach board using _adc\_calibration.py_.  This will help you determine whether the test tone is setup properly.  Use the default settings for this script so that results are not written to the <roachname>-adc.conf file. You can use the -d option for writing the various output files to a different directory if you want to manage all the files better.
 
-Once you are confident that calibrating a single roach board for specific conditions (bof, clockrate) is working, try running _adc\_all\_calibraitons.py_ for a single roach board, writting the results to the roachname-adc.conf file.  This may take a few minutes.  If this looks good, go ahead and run the same script for all your roach boards. 
+Once you are confident that calibrating a single roach board for specific conditions (bof, clockrate) is working, try running _adc\_all\_calibrations.py_ for a single roach board, writting the results to the roachname-adc.conf file.  This may take a few minutes.  If this looks good, go ahead and run the same script for all your roach boards. 
+
+## Examples
+cd into working directory
+
+   * cd adc5g_devel
+
+check that you are running python 2.7
+
+  * python --version
+
+make a temporary directory to store output files 
+
+  * mkdir tmp
+
+make sure your roach and synthisizer are on the network
+
+  * ping 'roach_name'
+  * ping 'synth_ip_address'
+
+run a test run on one roach, computing the mmcms, ogps, and inls for just one bof and clockrate (defaults).  Here's where you make sure your test tone is at the right frequency and amplitude, etc.  Run more then once if need be.
+
+  * python adc_calibration.py -r 'roach_name' -g 'synth_ip_address' -d tmp
+
+run a test run on one roach, but testing all bof and clockrates needed, and writing the results to the 'roach_name'-adc.conf file.
+
+  * mkdir conf
+  * cp 'path to conf file' conf/.
+  * python adc_all_calibrations.py -r 'roach_name' -g 'synth_ip_address' -d tmp -c conf
+
+finally, run the full calibration for all your roaches
+
+  * python adc_all_calibrations.py -r 'roach_name_1','roach_name_2','roach_name_N' -g 'synth_ip_address' -d tmp -c conf
 
 # Details
 
