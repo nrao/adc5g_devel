@@ -30,6 +30,15 @@ OGP - these values depend on roach board clockrate.  They only need to be reload
 
 INL - the values do not depend on bof or clockrate.  They need only be reloaded after a power cycle.
 
+# Hardware Setup
+
+   * In order to perform the OGP and INL calibration routines to gather the coefficients, a test tone must be connected to the input of each ADC board.  This is *NOT* required for reloading the coefficients, only for performing the calibration, as mentioned above, on the time scale of a few times a year.
+   * This test tone is not required for performing the MMCM correction.
+   * It would be preferable to use either the HP 83620A or the Agilent E8257D synthesizer to provide the test tone, because these synthesizers are known to be compatible with the GPIB.py routine used in the calibration code.  Other synthesizers may have a different GPIB command set, requiring a modification to GPIB.py.
+   * An ethernet-to-GPIB adapter is required to be compatible with the GPIB.py routine.  It is preferable that the PROLOGIX GPIB-ETHERNET CONTROLLER is used because it is known to work well in this hardware configuration.  This device connects to the GPIB port on the back of the synthesizer, and also to the LAN.  This allows the software to send GPIB commands to the synthesizer over the network.
+   * Disconnect the IF input to the ADC boards, and connect the test tones in their place.  It has been found that a nominal power level of -3dBm at the ADC input works well.
+   * Once the calibration is complete, remove the test tone inputs, and re-connect the IF signals to the ADC boards.
+
 # Overview of usage
 
 As stated in the introduction, this code is for finding and reloading different calibration results for the adc5g cards.  Here's a brief overview of how to use this code.  
