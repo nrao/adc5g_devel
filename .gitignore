@@ -1,0 +1,13 @@
+*.pyc
+*.png
+*.dat
+*.swp
+*.log
+*.meas
+*.a
+*.b
+*.c
+*.d
+*.fit
+*.ogp
+*.res
