@@ -4,7 +4,7 @@ import logging.config
 import logging.handlers
 timestamp = ''
 
-class AdcCalLoggingFileHandler(logging.handlers.RotatingFileHandler):
+class AdcCalLoggingFileHandler(logging.handlers.RotatingFileHandler,object):
     logfilename = ""
     timestamp = ""
     def __init__(self, fileName, mode, mxByte, bkupN):

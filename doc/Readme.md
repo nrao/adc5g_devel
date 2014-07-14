@@ -57,7 +57,11 @@ cd into working directory
 
    * cd adc5g_devel
 
-check that you are running python 2.7
+(DIBAS users only: setup your envirnoment)
+
+   * source /home/dibas/dibas.bash
+
+check that you are running python 2.6 or 2.7
 
   * python --version
 
