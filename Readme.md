@@ -21,6 +21,8 @@ The Roach 2 boards used for Vegas and DIBAS each have two ADC cards.  On the tim
 
 This document describes the AdcCalibration code, which performs the above tasks.
 
+_NOTE_: There appears to be more then one way to calibrate these ADCs.  The methods encapsulated in this code work for the GBT Vegas-derived backends.  For more information on alternative methods, contact the casper mailing list.
+
 <div id='id-background'>
 
 # Background
