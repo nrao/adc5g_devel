@@ -213,7 +213,7 @@ Now we will show what the expected plots from running this command are:
 
    * Once the MMC calibratoin is run, this plot is displayed (found in the logs at the line "2016-08-15 13:49:38,252 - adc5gLogging - DEBUG - ADCCalibrate - Saving file :ogp-160815//post_mmcm_ramp_check_vegasr2-1_zs2_2016-08-15-134924.png").  This is a plot of each ADC card, top and bottom.  Each half consists of the 'ramps' of the 4 cores in each ADC card.  Since the MMCM calibration has been done, there should be no 'glitches' - that is, data points that are not on the ramp.
 
-<img src="doc/example_calibration/ramps.png" width="1000px"> 
+<img src="doc/example_calibration/ramps" width="1000px"> 
 
    * Next, we move on to the 'Checking if the synthesizer is connected correctly' section.  Here we are capturing snapshots of the ADC data to make sure that our test tone looks healthy.  Again, the upper and lower halfs represent the two different ADC cards.  The 3 plots in each half represent the signal at different zoom levels.  If everything is working correctly, a healthy looking sine wave should appear in these plots.  However, if the amplitude of the test tone is too high, you'll be able to see clipping here.  (found in the logs a the line "016-08-15 13:49:55,094 - adc5gLogging - INFO - ADCCalibrate - Checking raw data... zdok: 2 save:1 filename: ogp-160815//post_ramp_check_raw_vegasr2-1_zs2_2016-08-15-134924").
 
