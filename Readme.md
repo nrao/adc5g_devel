@@ -25,6 +25,28 @@ _NOTE_: There appears to be more then one way to calibrate these ADCs.  The meth
 
 <div id='id-background'>
 
+# Installation
+
+You may have the correct libraries needed for this package already installed, but in case you do not, here is how to install both this package and the libraries needed.
+
+   * clone this repo (git clone https://github.com/nrao/adc5g_devel)
+   * create a virtualenv: (virtualenv adc5g-env)
+   * activate the env: (source adc5g-env/bin/activate)
+   * install the latest pip: (pip install -U pip)
+   * use this to install the env as specified in the repo: (pip install -r adc5g_devel/requirements.txt)
+   * if you have root permissions on your machine:
+      * install corr 0.6.7 with pip: (pip install corr=0.6.7)
+      * if you do not, install corr 0.6.7 by hand:
+         * download the corr-0.6.7 package and untar
+         * cd into the corr-0.6.7 folder
+         * edit setup.py: edit out the last line concerning data_files
+         * install it: (python setup.py install)
+
+Once you have setup the environment, check that all the unit tests pass:
+
+   * cd adc5g_devel/test
+   * python AllTests.py
+
 # Background
 
    * This code is based off Hong Chen's version of Jack Hickish's code: https://github.com/jack-h/adc_tests
