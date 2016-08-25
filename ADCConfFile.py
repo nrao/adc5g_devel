@@ -42,6 +42,9 @@ class ADCConfFile:
         self.file_read = True
 
     def read_mmcm_section(self):
+        # only older files have this section
+        if not self.cp.has_section(self.mmcm_sec):
+            return []    
         nentries = int(self.cp.get(self.mmcm_sec, "num_entries"))
         #logger.debug("Loading %d groups of entries in MMCM section." % nentries)
         info = []
