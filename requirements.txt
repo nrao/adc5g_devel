@@ -6,4 +6,4 @@ construct==2.5.3
 spead==0.5.1
 h5py==2.6.0
 scipy==0.18.0
-ipython==5.1.0
+ipython==7.16.3
